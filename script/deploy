@@ -1,0 +1,10 @@
+#!/bin/sh
+set -e
+ 
+ssh root@178.62.5.172 <<EOF
+  cd ~/hello-tomorrow
+  git pull
+  npm install --production
+  forever restartall
+  exit
+EOF
